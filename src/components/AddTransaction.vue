@@ -25,6 +25,7 @@ const text = ref('')
 const amount = ref('')
 const toast = useToast()
 
+const emit = defineEmits(['transactionSubmitted'])
 
 const onSubmit = () =>{
   if(!text.value || !amount.value){
@@ -33,7 +34,6 @@ const onSubmit = () =>{
   }
 
 
-  const emit = defineEmits(['transactionSubmitted'])
   
   const transactionData = {
     text: text.value,
